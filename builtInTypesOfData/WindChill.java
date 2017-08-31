@@ -16,6 +16,15 @@ public class WindChill{
 		double t = Double.parseDouble(args[0]);
 		double v = Double.parseDouble(args [1]);
 		
+		//validation checks
+		if(Math.abs(t) > 50){
+			System.out.println("Absolute value of t should be less than 50!");
+			System.exit(0);
+		}
+		if(v < 3 || v > 120){
+			System.out.println("Value of v should be between 3 and 120, inclusive!");
+			System.exit(0);
+		}
 		//windchill calculation
 		double w = A + (B*t) + (((C*t) - 35.75) * Math.pow(v,E));
 		System.out.println(w);
